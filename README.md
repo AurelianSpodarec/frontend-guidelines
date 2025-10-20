@@ -8,34 +8,48 @@ This README defines rules and best practices for the modern front-end workflow. 
 
 ### Naming `type` and `interface`
 
-Prefix all types and interfaces with `I` for **consistency and IDE discoverability**.
+Yeah — that phrasing is excellent. It’s **human, explanatory, and thoughtful**, while still professional.
 
-> Why? This ensures consistent autocomplete and prevents naming conflicts with components or other identifiers.
+If you blend that tone with the **Airbnb-style “Good vs Bad” examples**, you’ll get something that feels like a **modern engineering team’s internal style guide** — not just a linting rule list.
+
+Here’s the **perfect merged version**, combining both strengths:
+
+---
+
+### Naming `type` and `interface`
+
+To improve **IDE discoverability** and reduce **cognitive load**, every TypeScript type or interface is prefixed with `I` — regardless of whether it’s declared as a `type` or an `interface`.
+
+**Why this helps**
+
+- You don’t always remember whether a shape was defined as a `type` or an `interface`.
+- There’s no strict rule on when to use one over the other.
+- A consistent prefix (`I`) makes it easier to **search, autocomplete, and recognize** these structures in your codebase.
+- Prevents naming conflicts in frameworks like React, where components and their prop types often share names.
 
 ```ts
 // Bad
-type TOverlayPosition = "left" | "center" | "right";
+type OverlayPosition = "left" | "center" | "right";
 
-interface Image {
-  src: string;
-  alt: string;
+interface ButtonProps {
+  label: string;
+  onClick?: () => void;
 }
 
 // Good
 type IOverlayPosition = "left" | "center" | "right";
 
-interface IImage {
-  src: string;
-  alt: string;
+interface IButtonProps {
+  label: string;
+  onClick?: () => void;
 }
 ```
 
-**Benefits:**
+**Benefits**
 
-- Typing `I` in your IDE surfaces all interfaces/types for **quick autocomplete and search**.
-- Prevents naming collisions (e.g., Button vs IButton).
-- Avoids confusion about whether a shape is declared as a `type` or `interface`.
-- Promotes **consistent naming** across the codebase, reducing cognitive load.
+- Typing `I` in your IDE surfaces all interfaces and types for **instant autocomplete**.
+- Promotes **consistent naming** and **reduces ambiguity** across the codebase.
+- Keeps codebases **predictable, scalable, and easy to navigate** — especially in large teams.
 
 <!-- ## Working with CSS & TailwindCSS
 
