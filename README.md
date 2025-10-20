@@ -42,11 +42,9 @@ interface IButtonProps {
 
 ### Component Naming
 
-Files and components should be named with the type first, followed by the variant. This is the opposite of natural English word order, but it improves discoverability, predictability, and maintainability in modern front-end projects.
+Files and components should be named with the type first, followed by the variant. This is the opposite of natural English word order, but it improves discoverability, predictability, and maintainability in modern front-end projects — even if it’s the opposite of natural English word order.
 
 > NOTE: While some traditional style guides (e.g., Uncle Bob) recommend naming by variant then type, in modern front-end projects — with IDE autocomplete, AI-assisted tooling, and large component libraries — it is more practical to list the type first.
-
-This improves discoverability, predictability, and maintainability, even if it’s the opposite of natural English word order.
 
 **Why this helps**
 
