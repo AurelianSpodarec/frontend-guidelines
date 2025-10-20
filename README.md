@@ -4,17 +4,9 @@ _A practical approach to building scalable, maintainable front-end systems._
 
 This README defines rules and best practices for the modern front-end workflow. The goal is to reduce cognitive load, prevent common mistakes, and build consistent, maintainable systems.
 
-## Working with TypeScript
-
-### Naming `type` and `interface`
-
-Yeah — that phrasing is excellent. It’s **human, explanatory, and thoughtful**, while still professional.
-
-If you blend that tone with the **Airbnb-style “Good vs Bad” examples**, you’ll get something that feels like a **modern engineering team’s internal style guide** — not just a linting rule list.
-
-Here’s the **perfect merged version**, combining both strengths:
-
 ---
+
+## Working with TypeScript
 
 ### Naming `type` and `interface`
 
@@ -50,6 +42,8 @@ interface IButtonProps {
 - Typing `I` in your IDE surfaces all interfaces and types for **instant autocomplete**.
 - Promotes **consistent naming** and **reduces ambiguity** across the codebase.
 - Keeps codebases **predictable, scalable, and easy to navigate** — especially in large teams.
+
+---
 
 <!-- ## Working with CSS & TailwindCSS
 
