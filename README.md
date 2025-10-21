@@ -46,7 +46,7 @@ interface IButtonProps {
 
 **Atomic Design** is a methodology popularized by **Brad Frost**, who’s done incredible work in the design system space. His framework gave a clear language and structure to something many teams were already doing — breaking interfaces down into small, reusable parts and building them back up into complete experiences.
 
-That said, this idea isn’t exclusive to Atomic Design. Many teams have independently arrived at similar approaches under different names. The power isn’t in the label — it’s in the mindset of **thinking modularly** and **designing systematically**. So whether you call it Atomic Design or something else, the principle remains the same.
+> Note: This idea isn’t exclusive to Atomic Design. Many teams have independently arrived at similar approaches under different names. The power isn’t in the label — it’s in the mindset of **thinking modularly** and **designing systematically**. So whether you call it Atomic Design or something else, the principle remains the same.
 
 Think of it in terms of **architecture**:
 
@@ -102,7 +102,7 @@ This structure not only keeps your CSS scalable and predictable, but also mirror
 
 ---
 
-### CSS Methologies (BEM, OOCSS, ITCSS, SMACSS)
+### CSS Methologies
 
 For many years CSS was a wild west - there was no set of ways to do things, things was hard to write, it was messy, hard to modify and change things. So people were coming up with ways to manage this. And a few popular emerged, some of wich the concept is used till this day, maybe in a different form.
 
@@ -152,7 +152,7 @@ If you’re short on time, start with **[Chapter 2](https://atomicdesign.bradfro
 
 Files and components should be named with the type first, followed by the variant. This is the opposite of natural English word order, but it improves discoverability, predictability, and maintainability in modern front-end projects — even if it’s the opposite of natural English word order.
 
-> Note: While some traditional style guides (e.g., Uncle Bob) recommend naming by variant then type, in modern front-end projects — with IDE autocomplete, AI-assisted tooling, and large component libraries — it is more practical to list the type first.
+> Note: While some traditional style guides (e.g., Uncle Bob - The God Father of Programming) recommend naming by variant then type, in modern front-end projects — with IDE autocomplete, AI-assisted tooling, and large component libraries — it is more practical to list the type first.
 
 **Why this helps**
 
@@ -192,7 +192,9 @@ Desing and Front-end has many things in common:
 - Design System
 - Naming Files
 
-What this does is increases double the work for something that can be solved once. Instead of designer thinking of name and develoer you think of the name once and document it for good, and you create a culture where you systematise the namings of things - hard at first natural second. You start working like one body.
+What this does is increases double the work for something that can be solved once. Instead of designer thinking how to name a component, and then develoers thinking how to name the same component - you think of the name once and document it for good, and you create a culture where you systematise the namings of things - hard at first, but once you get used to it it becomes second nature and you start working like one body.
+
+This also helps busienss create a culture and accountbality, where if someone quits, they dont take the insights with them, because its incraved in the culture and process, and anyone new to the company will have to adapt - to change something they will need to follow a democratic political process; this is usually thrown upon but that's how larger companies work. Even smaller companies can benefit from this - the key is to find balance..
 
 #### Agree on Namings
 
