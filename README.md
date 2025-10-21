@@ -86,7 +86,7 @@ css/
 │  ├─ theme-dark/
 │  └─ theme-coffee/
 ├─ 2-base/              # Base styles (normalize, global defaults)
-├─ cheat.css            # Quick fixes
+├─ cheat.css            # Temporary Quick fixes
 └─ styles.css           # Main entrypoint for all CSS imports
 ```
 
@@ -116,13 +116,11 @@ BEM’s goal is to make your CSS modular, readable, and predictable by clearly d
 
 **Example:**
 
+<!-- prettier-ignore -->
 ```css
-.card {
-}
-.card__title {
-}
-.card--highlighted {
-}
+.card {}
+.card__title {}
+.card--highlighted {}
 ```
 
 - **Block** → a standalone entity (.card)
