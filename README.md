@@ -1,4 +1,4 @@
-# Front-End Guidelines
+# Front-End Guidelines - Writing In Progress
 
 _A practical approach to building scalable, maintainable front-end systems._
 
@@ -42,42 +42,107 @@ interface IButtonProps {
 
 ## CSS
 
-### Atomic Desing Folder Structure
+### Atomic Design
+
+**Atomic Design** is a methodology popularized by **Brad Frost**, who’s done incredible work in the design system space. His framework gave a clear language and structure to something many teams were already doing — breaking interfaces down into small, reusable parts and building them back up into complete experiences.
+
+That said, this idea isn’t exclusive to Atomic Design. Many teams have independently arrived at similar approaches under different names. The power isn’t in the label — it’s in the mindset of **thinking modularly** and **designing systematically**. So whether you call it Atomic Design or something else, the principle remains the same.
+
+Think of it in terms of **architecture**:
+
+- **Atoms** are your basic materials — bricks, glass panels, wooden planks, steel beams.  
+  In UI terms, these are the smallest reusable components: **buttons**, **inputs**, **labels**, **icons**.
+
+- **Molecules** are small functional units — like a door, window, or staircase — built by combining several materials together.  
+  In UI, that could be a **search bar** (an input + button) or a **form field** (a label + input + validation message).
+
+- **Organisms** are larger, self-contained sections — such as an entire room or a building floor — formed by assembling multiple molecules.  
+  In UI, this might be a **navbar**, **hero section**, or **product card** composed of multiple smaller elements.
+
+- **Templates** are like architectural blueprints — they define the overall layout and how the rooms or sections connect.  
+  In UI design, templates represent **page structures** or **layouts** that position organisms in a consistent way.
+
+- **Pages** are the completed buildings — real, tangible environments where people live or work, built from all those smaller parts working together.  
+  In UI, these are **final web pages** populated with real content and data, ready for users to interact with.
+
+In short: whether you follow **Brad Frost’s Atomic Design** or your own naming system, the key idea is to **think in layers of abstraction**, **design for reuse**, and **build systems that scale** — from a single button all the way to an entire digital product.
+
+---
+
+#### Example: Atomic Design Folder Structure
 
 ```bash
 css/
-├─ 0-vendor/            # Third-party libraries or resets
-├─ 1-tokens/            # Design tokens (colors, spacing, typography, components)
+├─ 0-vendor/            # Third-party libraries such as TailwindCSS
+├─ 1-tokens/            # Design tokens (colors, spacing, typography, components tokens)
 │  ├─ theme-light/
 │  │  ├─ primitives/    # Raw building blocks
-│  │  │  ├─ colors.css
+│  │  │  ├─ colors.css  # color-blue-500
 │  │  │  └─ spacing.css
 │  │  ├─ semantics/     # Contextual or semantic tokens
-│  │  │  ├─ colors.css
+│  │  │  ├─ colors.css  # color-primary
 │  │  │  └─ spacing.css
-│  │  └─ index.css       # Central entry for importing tokens
+│  │  └─ index.css      # Central entry for importing tokens
 │  ├─ theme-dark/
 │  └─ theme-coffee/
 ├─ 2-base/              # Base styles (normalize, global defaults)
-├─ cheat.css            # Utilities, overrides, quick fixes
-└─ styles.css           # Main entrypoint
+├─ cheat.css            # Quick fixes
+└─ styles.css           # Main entrypoint for all CSS imports
 ```
 
 Using number prefixes in folder names keeps your CSS organized and ensures files are imported in a logical, predictable order. Unlike a normal computer, which sorts folders alphabetically, numbers let you control the cascade explicitly — from vendor files to tokens, base styles, and finally components.
 
-This approach also mirrors what CSS is fundamentally: a cascade. Styles at the top are loaded first, forming the foundation for everything that follows. By structuring folders from primitives → semantics → base → components, you align with the cascade, ensuring that:
+This approach mirrors what CSS fundamentally is: a **cascade**. Styles at the top are loaded first, forming the foundation for everything that follows. By structuring folders from **primitives → semantics → base → components**, you align with that natural order, ensuring that:
 
-Core building blocks are defined first.
+- Core building blocks are defined first.
+- Theme tokens and base styles layer correctly.
+- Components can safely build on top without unexpected overrides.
 
-Theme tokens and base styles layer correctly.
+This structure not only keeps your CSS scalable and predictable, but also mirrors the way your components evolve — from **atoms to pages** — ensuring your codebase grows as systematically as your design.
 
-Components can safely build on top without unexpected overrides.
+---
 
-Following Atomic Design, this order also helps establish a clear mental model: you can easily skin themes, add new components, and maintain a modular, scalable CSS architecture.
+### CSS Methologies (BEM, OOCSS, ITCSS, SMACSS)
 
-### Naming Methologies (BEM, OOCSS, ITCSS, SMACSS)
+For many years CSS was a wild west - there was no set of ways to do things, things was hard to write, it was messy, hard to modify and change things. So people were coming up with ways to manage this. And a few popular emerged, some of wich the concept is used till this day, maybe in a different form.
+
+> Note: Depending on what you read, you’ll often find bias toward one methodology over another. The truth is, they’re all good — each solved real problems in its time. Your job isn’t to pick one “best” method but to understand them all and extract the best ideas from each. The real power comes from combining these approaches — whether it’s Atomic Design, BEM, or others — into a system that fits your team and product.
 
 #### BEM
+
+BEM is one of the most widely known CSS methodologies. It was created by developers at Yandex, a Russian company, and is documented at getbem.com.
+
+BEM’s goal is to make your CSS modular, readable, and predictable by clearly defining relationships between components and their parts.
+
+**Example:**
+
+```css
+.card {
+}
+.card__title {
+}
+.card--highlighted {
+}
+```
+
+- **Block** → a standalone entity (.card)
+- **Element** → a part of the block (.card\_\_title)
+- **Modifier** → a variation of the block or element (.card--highlighted)
+
+This naming convention makes it easy to understand where each style belongs and helps avoid naming collisions as projects grow.
+
+#### OOCSS
+
+#### ITCSS
+
+#### SMACSS
+
+#### Further Resources
+
+- **[Atomic Design by Brad Frost](https://atomicdesign.bradfrost.com/)**
+  The original and most comprehensive resource on the Atomic Design methodology.
+
+If you’re short on time, start with **[Chapter 2](https://atomicdesign.bradfrost.com/chapter-2/)** — it gives a concise, practical overview of the core concepts.
 
 ---
 
@@ -135,7 +200,7 @@ Idealy have a person that oversees and governs the design ssytems, work as a dem
 
 Some challenges with working is when you have a Junior developer/desinger come in and they write a new component that might already exist and do what they wnated.
 
-### Align Tokens
+#### Align Tokens
 
 ## Accessability
 
@@ -157,8 +222,22 @@ There are numerous tools to help developers and designers assess accessibility, 
 
 Beyond the ethical and practical reasons, accessibility is increasingly a legal requirement. More countries are implementing laws that require websites to meet accessibility standards. In the past, launching a website without accessibility considerations was common, but today failing to comply can lead to lawsuits and financial penalties.
 
-### UK Law
-
 ### European Law
 
+### UK Law
+
 ### American Law
+
+## Tooling
+
+### Husky
+
+## Business Impact
+
+Code is for business.
+Prioritising.
+MVP Costs. How and when to break desing.
+
+```
+
+```
