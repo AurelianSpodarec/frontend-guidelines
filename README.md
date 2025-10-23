@@ -238,6 +238,26 @@ Code is for business.
 Prioritising.
 MVP Costs. How and when to break desing.
 
-```
+## Security
 
-```
+### XSS Attacks
+
+## Company Policies
+
+Google sign in button
+
+## Choosing a Framework
+
+Psychology behind it
+
+## Project Structure
+
+No size fits all, adapt and use concept to create something that fits.
+
+## Performance Optimization
+
+## Git & Workflow
+
+## Error Handling
+
+## Design Systems
